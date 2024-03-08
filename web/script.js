@@ -12,7 +12,24 @@ const radioFour = document.getElementById("radioFour");
 // get default setting
 
 document.getElementById("downloadButton").addEventListener("click",
-    function() { eel.execute_enhance("-opt options/Test/test_single_x2.yml") });
+    function() {
+        let option;
+        if(radioTwo.checked) {
+            option = "options/Test/test_single_x2.yml";
+        }
+        else if(radioThree.checked) {
+            option = "options/Test/test_single_x3.yml";
+        }
+        else if(radioFour.checked) {
+            option = "options/Test/test_single_x4.yml";
+        }
+        else {
+            console.log("Error calling enhance: No enhance option selected.")
+            return;
+        }
+        console.log(option);
+        eel.execute_enhance(option);
+    });
 document.getElementById("previewButton").addEventListener("click", print);
 
 enhanceX2.addEventListener("click", function() { setRadioButton(radioTwo, 2); });
@@ -49,9 +66,3 @@ function setRadioButton(radioInput, buttonInput) {
 
 }
 
-eel.expose(my_javascript_function);
-function my_javascript_function(a, b, c, d) {
-  if (a < b) {
-    console.log(c * d);
-  }
-}
