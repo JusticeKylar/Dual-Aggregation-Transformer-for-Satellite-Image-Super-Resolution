@@ -1,3 +1,7 @@
+const map = document.getElementById("embeddedMap");
+map.style.height = (window.screen.availHeight-window.screen.availHeight * 0.10).toString();
+map.style.width = (window.screen.availWidth-window.screen.availWidth * 0.20).toString();
+
 const enhanceX2 = document.getElementById("enhanceX2");
 const enhanceX3 = document.getElementById("enhanceX3");
 const enhanceX4 = document.getElementById("enhanceX4");
@@ -8,7 +12,7 @@ const radioFour = document.getElementById("radioFour");
 // get default setting
 
 document.getElementById("downloadButton").addEventListener("click",
-    function() { eel.bruh() });
+    function() { eel.execute_enhance("-opt options/Test/test_single_x2.yml") });
 document.getElementById("previewButton").addEventListener("click", print);
 
 enhanceX2.addEventListener("click", function() { setRadioButton(radioTwo, 2); });

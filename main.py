@@ -1,11 +1,12 @@
 import eel
+from DAT.basicsr import *
 
 eel.init("web")
 
 
 @eel.expose
-def bruh():
-    print("haiii")
+def execute_enhance(args):
+    execute_DAT()
 
 
 eel.start("layout.html")
