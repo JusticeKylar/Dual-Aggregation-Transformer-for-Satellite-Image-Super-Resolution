@@ -1,5 +1,3 @@
-import { eel } from './eel.js'
-
 const enhanceX2 = document.getElementById("enhanceX2");
 const enhanceX3 = document.getElementById("enhanceX3");
 const enhanceX4 = document.getElementById("enhanceX4");
@@ -9,9 +7,9 @@ const radioFour = document.getElementById("radioFour");
 
 // get default setting
 
-document.getElementById("downloadButton").addEventListener("click", print);
+document.getElementById("downloadButton").addEventListener("click",
+    function() { eel.bruh() });
 document.getElementById("previewButton").addEventListener("click", print);
-
 
 enhanceX2.addEventListener("click", function() { setRadioButton(radioTwo, 2); });
 enhanceX3.addEventListener("click", function() { setRadioButton(radioThree, 3); });

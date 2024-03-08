@@ -1,13 +1,11 @@
 import eel
 
-eel.init('web_files')
+eel.init("web")
 
 
 @eel.expose
-def fart():
-    print("it works! yayy!! :3")
-    exit()
-    quit()
+def bruh():
+    print("haiii")
 
 
-eel.start('layout.html')
+eel.start("layout.html")
