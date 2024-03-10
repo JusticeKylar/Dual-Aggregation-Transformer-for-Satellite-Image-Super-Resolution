@@ -8,14 +8,14 @@ from basicsr.utils import get_root_logger, get_time_str, make_exp_dirs
 from basicsr.utils.options import dict2str, parse_options
 
 
-def execute_DAT(selected_enhance_level):
+def execute_DAT():
     root_path = osp.abspath(osp.join(__file__, osp.pardir, osp.pardir))
-    test_pipeline(root_path, selected_enhance_level)
+    test_pipeline(root_path)
 
 
-def test_pipeline(root_path_input, selected_enhance_level):
+def test_pipeline(root_path_input):
     # parse options, set distributed setting, set ramdom seed
-    opt, _ = parse_options(root_path_input, selected_enhance_level, is_train=False)
+    opt, _ = parse_options(root_path_input, is_train=False)
 
     torch.backends.cudnn.benchmark = True
     # torch.backends.cudnn.deterministic = True
